@@ -136,7 +136,7 @@ int main(void) {
 		}
 
 #ifdef TEST_AUDIO
-		int16_t *ptr = NULL;
+		int16_t *ptr = 0;
 		if(audio_sel < 100){
 			ptr = audio_1_khz;
 		}

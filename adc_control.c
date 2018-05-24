@@ -2,18 +2,6 @@
 #include "adc_control.h"
 
 static volatile DMAState_t *private_dma_flag = 0;
-/*
-void ADC1_COMP_IRQHandler(void){
-	
-	if((ADC1->ISR & ADC_ISR_EOC) != 0)
-	{
-     lastValue = ADC1->DR;
-	}
-	ADC1->ISR = 0;
-	
-}
-*/
-
 
 void DMA1_Channel1_IRQHandler(void){
 
@@ -85,13 +73,6 @@ uint8_t initADC(uint16_t *write_buff, uint32_t buff_len, DMAState_t *dma_flag){
 	{
 		/* time-out */
 	}
-	
-	/*
-	NVIC_EnableIRQ(ADC1_COMP_IRQn); 	
-	ADC1->IER = ADC_IER_EOCIE; // Enable interrupts on EOC
-	*/
-	
-	
 
 	
 	ADC1->CR |= ADC_CR_ADEN; 
